@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Shopping Cart</title>
+    <link rel="stylesheet" href="giohang.css">
+    <script src="angular.min.js"></script>
+</head>
+
+<body>
+    <div class="giohang">
+        <a onclick="showcart();"><img src="cart.jpg"><span id="countsp">0</span></a>
+    </div>
+     <div id="showcart">
+        <table>
+            <tr>
+                <th>STT</th>
+                <th>Hình</th>
+                <th>Tên sản phẩm</th>
+                <th>Đơn giá</th>
+                <th>Số lượng</th>
+                <th>Thành tiền ($)</th>
+            </tr>
+            <tbody id="mycart">
+
+            </tbody>
+
+        </table>
+    </div> 
+    <div class="boxcenter">
+        <div class="row mb header">
+            <h1> SIÊU THỊ TRỰC TUYẾN</h1>
+        </div>
+
+        <div class="row mb menu">
+            <ul>
+                <li><a href="index.html">Trang chủ</a></li>
+                <li><a href="#">Giỏ hàng</a></li>
+                <li><a href="#">Liên hệ</a></li>
+                <li><a href="#">Góp ý</a></li>
+                <li><a href="#">Hỏi đáp</a></li>
+            </ul>
+        </div>
+        <div class="row mb ">
+            <div class="row">
+                <div class="banner mb">
+                   
+                    <div class="container">
+
+                        <div class="mySlides ">
+                          
+                          <img src="banner.jpg" width="1000">
+                        
+                        </div>
+                        
+                        <div class="mySlides ">
+                          
+                          <img src="banner1.jpg"width="1000">
+                        
+                        </div>
+                        
+                        <div class="mySlides">
+                         
+                          <img src="banner2.png"width="1000" >
+                        
+                        </div>
+                        
+                        <a class="prev" onclick="plusSlides(-1)">❮</a>
+                        <a class="next" onclick="plusSlides(1)">❯</a>
+                        
+                        </div>
+                        
+                </div>
+            </div>
+            <article>
+            <div class="row">
+                <div class="boxsp mr">
+                    <div class="row img"><img src="1.jpg" alt=""></div>
+                    <p>$<span>700</span></p>
+                    <a href="#">Laptop DELL</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+               <div class="boxsp mr">
+                    <div class="row img"><img src="2.jpg" alt=""></div>
+                    <p>$<span>400</span></p>
+                    <a href="#">Laptop ASUSZENBOOK</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp ">
+                    <div class="row img"><img src="3.jpg" alt=""></div>
+                    <p>$<span>100</span></p>
+                    <a href="#">Laptop ACER</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="4.jpg" alt=""></div>
+                    <p>$<span>450</span></p>
+                    <a href="#">Laptop MACBOOK</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="5.jpg" alt=""></div>
+                    <p>$<span>180</span></p>
+                    <a href="#">HP</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp ">
+                    <div class="row img"><img src="6.jpg" alt=""></div>
+                    <p>$<span>600</span></p>
+                    <a href="#">Laptop GAMING</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                <div class="boxsp mr">
+                    <div class="row img"><img src="7.jpg" alt=""></div>
+                    <p>$<span>90</span></p>
+                    <a href="#">PC</a>
+                    <input type="number" name="soluong" min="1" max="10" value="1">
+                    <button onclick="themvaogiohang(this)">Đặt hàng</button>
+                </div>
+                
+    </div>
+</article>
+<aside>
+    <form name="frm" class="col-5 mx-auto border border-primary" >
+        <h2>Đăng Kí Thành Viên</h2>
+        <div  class="form-group">
+            <label>Mã sinh viên</label><br>
+            <input name="msv" class="form-control bg-primary" ng-model="masv"required  maxlength="10">
+    <em ng-if="frm.masv.$invaid" class="text-danger h6"></em>
+        </div  class="form-group">
+        <div>
+            <label>Họ và tên</label><br>
+            <input name="ten" class="form-control bg-primary" ng-model="ten"required  maxlength="30">
+<em ng-if="frm.ten.$invaid" class="text-danger h6"></em>
+        </div>
+        <div  class="form-group">
+            <label> Email</label><br>
+            <input type="email"  name="email" class="form-control bg-primary" ng-model="email"required  maxlength="30">
+            <em ng-if="frm.email.$invaid" class="text-danger h6"></em>
+        </div>
+ 
+            <div>
+            <fieldset class="border border-secondary p-3">
+                <legend>Giới tính</legend>
+               
+                <input type="radio" name="gender" class="form-control1 bg-primary" ng-model="gender"required >
+                <em ng-if="frm.gender.$invaid" class="text-danger h6">Nam</em>
+                <input type="radio" name="gender" class="form-control1 bg-primary" ng-model="gender"required >
+                <em ng-if="frm.gender.$invaid" class="text-danger h6">Nữ</em>
+ 
+            </fieldset>
+        </div>
+       
+            <div>
+            <fieldset class="border border-secondary p-3">
+               <legend >Sở thích</legend>
+               <input type="checkbox" name="st" value="docsach"><label>Đọc Sách</label>&nbsp;
+               <input type="checkbox" name="st"value="dulich"><label>Du Lịch</label>&nbsp;
+               <input type="checkbox" name="st"value="amthuc"><label>Ẩm Thực</label>&nbsp;
+               <input type="checkbox" name="st"value="amnhac"><label>Âm Nhạc</label>&nbsp;
+               <input type="checkbox" name="st"value="khac"><label>Khác..</label>
+               
+            </fieldset>
+        </div>
+        <div>
+            <label>Quốc tịch</label><br>
+            <select class="qt"  name="qt" class="form-control bg-primary" ng-model="qt"required >
+                <em ng-if="frm.qt.$invaid" class="text-danger h6"></em>
+               <option value="">Chọn quốc gia</option>
+               <option value="Việt Nam">Việt Nam</option>
+               <option value="Lào">Lào</option>
+               <option value="Campuchia">Campuchia</option>
+           </select>
+        </div>
+        <div>
+            <label>Ghi chú</label>
+            <br>
+            <textarea class="tt" cols="25" rows="5"></textarea>
+        </div>
+        <button class="btn btn-info">ĐĂNG KÍ</button>
+    </form>
+</aside>
+
+    <script src="giohang.js"></script>
+
+
+    <script>let ind = 1;
+        showSlides(ind);
+        
+        function plusSlides(n) {
+          showSlides(ind += n);
+        }
+        
+       
+        
+        function showSlides(n) {
+let i;
+          let slides = document.getElementsByClassName("mySlides");
+          let arr = document.getElementsByClassName("dot");
+          if (n > slides.length) {ind = 1}    
+          if (n < 1) {ind = slides.length}
+          for (i = 0; i < slides.length; i++) {
+            slides[i].style.display = "none";  
+          }
+          for (i = 0; i < arr.length; i++) {
+            arr[i].className =arr[i].className.replace(" active", "");
+          }
+          slides[ind-1].style.display = "block";  
+          arr[ind-1].className += " active";
+        }</script>
+</body>
+
+</html>
